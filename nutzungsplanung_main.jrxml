@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="nutzungsplanung_main" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6267e9db-bda7-4089-91dc-b25b11ca1ed8">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="AGDI"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="228"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="765"/>
+	<queryString>
+		<![CDATA[SELECT
+	*, dok_id::json as dokumente
+FROM
+	arp_npl_pub.nutzungsplanung_grundnutzung AS grundnutzung
+WHERE
+	ST_Intersects(grundnutzung.geometrie, ST_SetSRID(ST_MakePoint(2630731, 1241326), 2056))
+;
+]]>
+	</queryString>
+	<field name="t_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="t_id"/>
+	</field>
+	<field name="t_ili_tid" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="t_ili_tid"/>
+	</field>
+	<field name="typ_bezeichnung" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="typ_bezeichnung"/>
+	</field>
+	<field name="typ_abkuerzung" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="typ_abkuerzung"/>
+	</field>
+	<field name="typ_verbindlichkeit" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="typ_verbindlichkeit"/>
+	</field>
+	<field name="typ_bemerkungen" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="typ_bemerkungen"/>
+	</field>
+	<field name="typ_kt" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="typ_kt"/>
+	</field>
+	<field name="typ_code_kommunal" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="typ_code_kommunal"/>
+	</field>
+	<field name="typ_nutzungsziffer" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="typ_nutzungsziffer"/>
+	</field>
+	<field name="typ_nutzungsziffer_art" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="typ_nutzungsziffer_art"/>
+	</field>
+	<field name="typ_geschosszahl" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="typ_geschosszahl"/>
+	</field>
+	<field name="name_nummer" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="name_nummer"/>
+	</field>
+	<field name="rechtsstatus" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="rechtsstatus"/>
+	</field>
+	<field name="publiziertab" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="publiziertab"/>
+	</field>
+	<field name="bemerkungen" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="bemerkungen"/>
+	</field>
+	<field name="erfasser" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="erfasser"/>
+	</field>
+	<field name="datum" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="datum"/>
+	</field>
+	<field name="dok_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dok_id"/>
+	</field>
+	<field name="dok_titel" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dok_titel"/>
+	</field>
+	<field name="dok_offiziellertitel" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dok_offiziellertitel"/>
+	</field>
+	<field name="dok_abkuerzung" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dok_abkuerzung"/>
+	</field>
+	<field name="dok_offiziellenr" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dok_offiziellenr"/>
+	</field>
+	<field name="dok_kanton" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dok_kanton"/>
+	</field>
+	<field name="dok_gemeinde" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dok_gemeinde"/>
+	</field>
+	<field name="dok_publiziertab" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dok_publiziertab"/>
+	</field>
+	<field name="dok_rechtsstatus" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dok_rechtsstatus"/>
+	</field>
+	<field name="dok_textimweb" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dok_textimweb"/>
+	</field>
+	<field name="dok_bemerkungen" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dok_bemerkungen"/>
+	</field>
+	<field name="dok_rechtsvorschrift" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dok_rechtsvorschrift"/>
+	</field>
+	<field name="bfs_nr" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="bfs_nr"/>
+	</field>
+	<field name="geometrie" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="geometrie"/>
+	</field>
+	<field name="dokumente" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="dokumente"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="147" y="58" width="223" height="30" uuid="7acc98e6-b84e-4387-92c3-55a25f992f2d"/>
+				<textFieldExpression><![CDATA[$F{dokumente}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
