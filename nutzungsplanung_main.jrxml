@@ -32,6 +32,60 @@
 			<rightPen lineWidth="0.5" lineColor="#000000"/>
 		</box>
 	</style>
+	<style name="Table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TH" mode="Opaque" backcolor="#10F200">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_CH" mode="Opaque" backcolor="#C9FFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
 	<subDataset name="Dataset1" uuid="8c69ab22-4324-45d8-872a-3a3b714e3bf5">
 		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 		<queryString>
@@ -57,7 +111,7 @@ SELECT
 FROM
   grundnutzung
 WHERE
-	t_id = 641
+	t_id = 614
 ;]]>
 		</queryString>
 		<field name="t_id" class="java.lang.Long">
@@ -76,13 +130,140 @@ WHERE
 			<property name="com.jaspersoft.studio.field.label" value="titel"/>
 		</field>
 	</subDataset>
+	<subDataset name="Dataset3" uuid="6ea53ef9-2a6d-4911-9ffa-d4da2b902f4d">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="AGDI"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT
+  *
+FROM
+  arp_npl_pub.nutzungsplanung_ueberlagernd_flaeche AS ueberlagernd_flaeche 
+WHERE
+  ST_Intersects(ueberlagernd_flaeche.geometrie, ST_SetSRID(ST_MakePoint(2630864.0,1241497.1), 2056))
+;]]>
+		</queryString>
+		<field name="t_id" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.label" value="t_id"/>
+		</field>
+		<field name="t_ili_tid" class="java.lang.Object">
+			<property name="com.jaspersoft.studio.field.label" value="t_ili_tid"/>
+		</field>
+		<field name="typ_bezeichnung" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="typ_bezeichnung"/>
+		</field>
+		<field name="typ_abkuerzung" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="typ_abkuerzung"/>
+		</field>
+		<field name="typ_verbindlichkeit" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="typ_verbindlichkeit"/>
+		</field>
+		<field name="typ_bemerkungen" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="typ_bemerkungen"/>
+		</field>
+		<field name="typ_kt" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="typ_kt"/>
+		</field>
+		<field name="typ_code_kommunal" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="typ_code_kommunal"/>
+		</field>
+		<field name="name_nummer" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="name_nummer"/>
+		</field>
+		<field name="rechtsstatus" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="rechtsstatus"/>
+		</field>
+		<field name="publiziertab" class="java.sql.Date">
+			<property name="com.jaspersoft.studio.field.label" value="publiziertab"/>
+		</field>
+		<field name="bemerkungen" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="bemerkungen"/>
+		</field>
+		<field name="erfasser" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="erfasser"/>
+		</field>
+		<field name="datum" class="java.sql.Date">
+			<property name="com.jaspersoft.studio.field.label" value="datum"/>
+		</field>
+		<field name="dok_id" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="dok_id"/>
+		</field>
+		<field name="dok_titel" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="dok_titel"/>
+		</field>
+		<field name="dok_offiziellertitel" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="dok_offiziellertitel"/>
+		</field>
+		<field name="dok_abkuerzung" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="dok_abkuerzung"/>
+		</field>
+		<field name="dok_offiziellenr" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="dok_offiziellenr"/>
+		</field>
+		<field name="dok_kanton" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="dok_kanton"/>
+		</field>
+		<field name="dok_gemeinde" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="dok_gemeinde"/>
+		</field>
+		<field name="dok_publiziertab" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="dok_publiziertab"/>
+		</field>
+		<field name="dok_rechtsstatus" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="dok_rechtsstatus"/>
+		</field>
+		<field name="dok_textimweb" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="dok_textimweb"/>
+		</field>
+		<field name="dok_bemerkungen" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="dok_bemerkungen"/>
+		</field>
+		<field name="dok_rechtsvorschrift" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="dok_rechtsvorschrift"/>
+		</field>
+		<field name="plan_plandokumentid" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="plan_plandokumentid"/>
+		</field>
+		<field name="plan_titel" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="plan_titel"/>
+		</field>
+		<field name="plan_offiziellertitel" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="plan_offiziellertitel"/>
+		</field>
+		<field name="plan_offiziellenr" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="plan_offiziellenr"/>
+		</field>
+		<field name="plan_kanton" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="plan_kanton"/>
+		</field>
+		<field name="plan_gemeinde" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="plan_gemeinde"/>
+		</field>
+		<field name="plan_publiziertab" class="java.sql.Date">
+			<property name="com.jaspersoft.studio.field.label" value="plan_publiziertab"/>
+		</field>
+		<field name="plan_rechtsstatus" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="plan_rechtsstatus"/>
+		</field>
+		<field name="plan_planimweb" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="plan_planimweb"/>
+		</field>
+		<field name="plan_bemerkungen" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="plan_bemerkungen"/>
+		</field>
+		<field name="bfs_nr" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="bfs_nr"/>
+		</field>
+		<field name="geometrie" class="java.lang.Object">
+			<property name="com.jaspersoft.studio.field.label" value="geometrie"/>
+		</field>
+	</subDataset>
 	<queryString>
 		<![CDATA[SELECT
 	*
 FROM
-	arp_npl_pub.nutzungsplanung_grundnutzung AS grundnutzung
+	arp_npl_pub.nutzungsplanung_ueberlagernd_flaeche AS ueberlagernd_flaeche 
 WHERE
-	ST_Intersects(grundnutzung.geometrie, ST_SetSRID(ST_MakePoint(2630812.9,1241432.5), 2056))
+	ST_Intersects(ueberlagernd_flaeche.geometrie, ST_SetSRID(ST_MakePoint(2630864.0,1241497.1), 2056))
 ;]]>
 	</queryString>
 	<field name="t_id" class="java.lang.Long">
@@ -108,15 +289,6 @@ WHERE
 	</field>
 	<field name="typ_code_kommunal" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="typ_code_kommunal"/>
-	</field>
-	<field name="typ_nutzungsziffer" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.label" value="typ_nutzungsziffer"/>
-	</field>
-	<field name="typ_nutzungsziffer_art" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="typ_nutzungsziffer_art"/>
-	</field>
-	<field name="typ_geschosszahl" class="java.lang.Integer">
-		<property name="com.jaspersoft.studio.field.label" value="typ_geschosszahl"/>
 	</field>
 	<field name="name_nummer" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="name_nummer"/>
@@ -172,6 +344,36 @@ WHERE
 	<field name="dok_rechtsvorschrift" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="dok_rechtsvorschrift"/>
 	</field>
+	<field name="plan_plandokumentid" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="plan_plandokumentid"/>
+	</field>
+	<field name="plan_titel" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="plan_titel"/>
+	</field>
+	<field name="plan_offiziellertitel" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="plan_offiziellertitel"/>
+	</field>
+	<field name="plan_offiziellenr" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="plan_offiziellenr"/>
+	</field>
+	<field name="plan_kanton" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="plan_kanton"/>
+	</field>
+	<field name="plan_gemeinde" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="plan_gemeinde"/>
+	</field>
+	<field name="plan_publiziertab" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="plan_publiziertab"/>
+	</field>
+	<field name="plan_rechtsstatus" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="plan_rechtsstatus"/>
+	</field>
+	<field name="plan_planimweb" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="plan_planimweb"/>
+	</field>
+	<field name="plan_bemerkungen" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="plan_bemerkungen"/>
+	</field>
 	<field name="bfs_nr" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.label" value="bfs_nr"/>
 	</field>
@@ -205,7 +407,7 @@ WHERE
 				<textFieldExpression><![CDATA[$F{typ_bezeichnung} + "---" + $F{typ_code_kommunal} + "---" + $F{t_id}]]></textFieldExpression>
 			</textField>
 			<componentElement>
-				<reportElement x="0" y="80" width="550" height="200" uuid="4065d562-0e0a-4181-b300-a13b98d29025">
+				<reportElement x="2" y="220" width="550" height="120" uuid="4065d562-0e0a-4181-b300-a13b98d29025">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
 					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
@@ -225,6 +427,145 @@ WHERE
 								<reportElement x="0" y="0" width="600" height="30" uuid="cd6eaa18-e307-4ecb-ae21-25317aca8874"/>
 								<textFieldExpression><![CDATA[$F{titel}]]></textFieldExpression>
 							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement x="0" y="40" width="552" height="160" uuid="6aa7ce68-0585-4a52-abe1-7bab02f814ef">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 1_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 1_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 1_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset3" uuid="ae5bdb83-0790-40de-85e1-bccabe0ab2d7">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="200" uuid="ce7e7778-e93b-4dba-9671-f009530bad82">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:tableHeader style="Table 1_TH" height="30" rowSpan="1"/>
+						<jr:tableFooter style="Table 1_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="Table 1_CH" height="30" rowSpan="1"/>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1"/>
+						<jr:detailCell style="Table 1_TD" height="150">
+							<textField>
+								<reportElement positionType="Float" x="0" y="0" width="200" height="75" uuid="04ec6074-9c86-47d4-a224-d6355f74636e"/>
+								<textFieldExpression><![CDATA["Bezeichnung: " + $F{typ_bezeichnung}
+]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement positionType="Float" x="0" y="75" width="200" height="75" uuid="a2b0f37d-dade-4d54-8aa2-a4432393c631"/>
+								<textFieldExpression><![CDATA["Kantonstyp: " + $F{typ_kt}
+]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="290" uuid="62193ff0-730e-4895-9802-388753e0f0ea">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:tableHeader style="Table 1_TH" height="30" rowSpan="1"/>
+						<jr:tableFooter style="Table 1_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="Table 1_CH" height="30" rowSpan="1"/>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1"/>
+						<jr:detailCell style="Table 1_TD" height="150">
+							<componentElement>
+								<reportElement x="0" y="0" width="290" height="150" uuid="b28d4fa3-341e-463b-b857-5ee575172980">
+									<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+									<property name="com.jaspersoft.studio.table.style.table_header" value="Table 2_TH"/>
+									<property name="com.jaspersoft.studio.table.style.column_header" value="Table 2_CH"/>
+									<property name="com.jaspersoft.studio.table.style.detail" value="Table 2_TD"/>
+								</reportElement>
+								<jr:table>
+									<datasetRun subDataset="Dataset2" uuid="4e59a202-a7e9-43e5-9c89-348730aaab77">
+										<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+									</datasetRun>
+									<jr:column width="40" uuid="2bb48139-c319-4b6f-baef-09b88972e2b8">
+										<jr:tableHeader style="Table 2_TH" height="30"/>
+										<jr:tableFooter style="Table 2_TH" height="30"/>
+										<jr:columnHeader style="Table 2_CH" height="30">
+											<staticText>
+												<reportElement x="0" y="0" width="40" height="30" uuid="088d6d4c-20f0-4c6b-be42-ef6e789799b0"/>
+												<text><![CDATA[t_id]]></text>
+											</staticText>
+										</jr:columnHeader>
+										<jr:columnFooter style="Table 2_CH" height="30"/>
+										<jr:detailCell style="Table 2_TD" height="30">
+											<textField>
+												<reportElement x="0" y="0" width="40" height="30" uuid="cfedef92-53c2-4cbe-b73c-caca7a02e557"/>
+												<textFieldExpression><![CDATA[$F{t_id}]]></textFieldExpression>
+											</textField>
+										</jr:detailCell>
+									</jr:column>
+									<jr:column width="40" uuid="3751a742-f01c-4748-883e-2fa9ff83114f">
+										<jr:tableHeader style="Table 2_TH" height="30"/>
+										<jr:tableFooter style="Table 2_TH" height="30"/>
+										<jr:columnHeader style="Table 2_CH" height="30">
+											<staticText>
+												<reportElement x="0" y="0" width="40" height="30" uuid="b7cbbd14-4552-4cb3-b51d-9328ca261dfb"/>
+												<text><![CDATA[typ_kt]]></text>
+											</staticText>
+										</jr:columnHeader>
+										<jr:columnFooter style="Table 2_CH" height="30"/>
+										<jr:detailCell style="Table 2_TD" height="30">
+											<textField>
+												<reportElement x="0" y="0" width="40" height="30" uuid="5a27d4b7-dd0e-4e73-924b-b208b975384e"/>
+												<textFieldExpression><![CDATA[$F{typ_kt}]]></textFieldExpression>
+											</textField>
+										</jr:detailCell>
+									</jr:column>
+									<jr:column width="40" uuid="b5345330-a12a-4d0c-9701-09d6baf81976">
+										<jr:tableHeader style="Table 2_TH" height="30"/>
+										<jr:tableFooter style="Table 2_TH" height="30"/>
+										<jr:columnHeader style="Table 2_CH" height="30">
+											<staticText>
+												<reportElement x="0" y="0" width="40" height="30" uuid="cb2fe5e8-acae-4322-a927-ba031ffa0626"/>
+												<text><![CDATA[typ_bezeichnung]]></text>
+											</staticText>
+										</jr:columnHeader>
+										<jr:columnFooter style="Table 2_CH" height="30"/>
+										<jr:detailCell style="Table 2_TD" height="30">
+											<textField>
+												<reportElement x="0" y="0" width="40" height="30" uuid="9ec9bf23-c3d5-4ab3-b35a-e1be4a172238"/>
+												<textFieldExpression><![CDATA[$F{typ_bezeichnung}]]></textFieldExpression>
+											</textField>
+										</jr:detailCell>
+									</jr:column>
+									<jr:column width="40" uuid="3ff83726-16a2-48e2-a9f4-cab0296e46b4">
+										<jr:tableHeader style="Table 2_TH" height="30"/>
+										<jr:tableFooter style="Table 2_TH" height="30"/>
+										<jr:columnHeader style="Table 2_CH" height="30">
+											<staticText>
+												<reportElement x="0" y="0" width="40" height="30" uuid="dc0da5f3-168a-4609-aea8-b50c7e393d00"/>
+												<text><![CDATA[typ_code_kommunal]]></text>
+											</staticText>
+										</jr:columnHeader>
+										<jr:columnFooter style="Table 2_CH" height="30"/>
+										<jr:detailCell style="Table 2_TD" height="30">
+											<textField>
+												<reportElement x="0" y="0" width="40" height="30" uuid="e578f87c-f7b4-4b11-8a32-f29b2b1363a5"/>
+												<textFieldExpression><![CDATA[$F{typ_code_kommunal}]]></textFieldExpression>
+											</textField>
+										</jr:detailCell>
+									</jr:column>
+									<jr:column width="40" uuid="ca1f940d-8d10-4021-93f1-70f1f7f5207e">
+										<jr:tableHeader style="Table 2_TH" height="30"/>
+										<jr:tableFooter style="Table 2_TH" height="30"/>
+										<jr:columnHeader style="Table 2_CH" height="30">
+											<staticText>
+												<reportElement x="0" y="0" width="40" height="30" uuid="3c0a9a44-c0e5-44b6-bf0b-69d0f7eb2421"/>
+												<text><![CDATA[titel]]></text>
+											</staticText>
+										</jr:columnHeader>
+										<jr:columnFooter style="Table 2_CH" height="30"/>
+										<jr:detailCell style="Table 2_TD" height="30">
+											<textField>
+												<reportElement x="0" y="0" width="40" height="30" uuid="4f305fe4-89b3-42fd-97f7-93630d194346"/>
+												<textFieldExpression><![CDATA[$F{titel}]]></textFieldExpression>
+											</textField>
+										</jr:detailCell>
+									</jr:column>
+								</jr:table>
+							</componentElement>
 						</jr:detailCell>
 					</jr:column>
 				</jr:table>
