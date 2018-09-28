@@ -392,14 +392,14 @@ www.agi.so.ch]]></text>
 				<textFieldExpression><![CDATA[$F{nbident}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.###">
-				<reportElement x="106" y="0" width="88" height="17" uuid="50087510-8c97-4477-9502-c053b84094ca"/>
+				<reportElement x="103" y="0" width="88" height="17" uuid="50087510-8c97-4477-9502-c053b84094ca"/>
 				<textElement textAlignment="Right" markup="none">
 					<font fontName="Frutiger" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{gemeindename}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.###">
-				<reportElement x="106" y="17" width="88" height="17" uuid="86776499-554f-49f5-b06b-fceb080bf765"/>
+				<reportElement x="103" y="17" width="88" height="17" uuid="86776499-554f-49f5-b06b-fceb080bf765"/>
 				<textElement textAlignment="Right" markup="none">
 					<font fontName="Frutiger" isBold="false"/>
 				</textElement>
@@ -576,7 +576,7 @@ $F{plz} + " " + $F{ortschaft} + "<br><br>" +
 "<a href='" + $F{web} + "'>www.so.ch</a>"]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement x="270" y="20" width="228" height="74" uuid="129f77e5-d824-4832-8a1a-58c3ca0203b5"/>
+				<reportElement x="270" y="20" width="228" height="150" uuid="129f77e5-d824-4832-8a1a-58c3ca0203b5"/>
 				<textElement markup="html">
 					<font fontName="Frutiger"/>
 				</textElement>
@@ -586,7 +586,7 @@ $F{firma} + "<br>" +
 $F{nf_strasse} + " " + $F{nf_hausnummer}  + "<br>" +
 $F{nf_plz} + " " + $F{nf_ortschaft}  + "<br><br>" +
 "Telefon " + $F{nf_telefon}  + "<br>" +
-"<a href='mailto:" + $F{nf_email} + "'>"+$F{email} + "<br>" +
+"<a href='mailto:" + $F{nf_email} + "'>"+$F{nf_email} + "<br>" +
 "<a href='" + $F{nf_web} + "'>"+$F{nf_web}+"</a>"
 ]]></textFieldExpression>
 			</textField>
