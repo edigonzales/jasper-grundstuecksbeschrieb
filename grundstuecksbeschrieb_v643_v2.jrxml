@@ -66,13 +66,14 @@ ls_egrid, liegenschaft.flaechenmass AS ls_flaechenmass,
     ST_Intersects(bodenbedeckung.geometrie, liegenschaft.geometrie)
 )
 SELECT
-  ST_Area(ST_Union(geom)) AS flaechenmass, art, art_txt, 
+  ST_Area(ST_Union(geom)) AS flaechenmass, art, art_txt, bfs_nr,
 ls_nummer, ls_nbident, ls_egrid,
   ls_flaechenmass, ls_art, ls_art_txt
 FROM
 (
   SELECT
-    (ST_Dump(geom)).geom, boflaeche.art, boflaeche.art_txt, boflaeche.ls_nummer,
+    (ST_Dump(geom)).geom, boflaeche.art, boflaeche.art_txt,
+boflaeche.bfs_nr, boflaeche.ls_nummer,
     boflaeche.ls_nbident, boflaeche.ls_egrid,
 boflaeche.ls_flaechenmass, boflaeche.ls_art, boflaeche.ls_art_txt
   FROM
@@ -81,7 +82,7 @@ boflaeche.ls_flaechenmass, boflaeche.ls_art, boflaeche.ls_art_txt
     ST_IsEmpty(geom) = FALSE
 ) AS foo
 GROUP BY
-  art, art_txt, ls_nummer, ls_nbident, ls_egrid,
+  art, art_txt, bfs_nr, ls_nummer, ls_nbident, ls_egrid,
   ls_flaechenmass, ls_art, ls_art_txt
 ORDER BY
   art_txt
@@ -95,6 +96,9 @@ ORDER BY
 		</field>
 		<field name="art_txt" class="java.lang.String">
 			<property name="com.jaspersoft.studio.field.label" value="art_txt"/>
+		</field>
+		<field name="bfs_nr" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="bfs_nr"/>
 		</field>
 		<field name="ls_nummer" class="java.lang.String">
 			<property name="com.jaspersoft.studio.field.label" value="ls_nummer"/>
