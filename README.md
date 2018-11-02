@@ -8,3 +8,4 @@ net.sf.jasperreports.engine.util.JRImageLoader.getInstance(new SimpleJasperRepor
 ```
 new java.io.StringBufferInputStream(new org.w3c.tools.codec.Base64Decoder($V{KANTONSLOGO_SW}).processString())
 ```
+
